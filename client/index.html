@@ -3,41 +3,154 @@
 <head>
 <meta chatset="utf8">
 <title></title>
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<form id="rsvp-form" method="post" action="/rsvp">
-  <div class="form-group">
-    <label for="rsvp-name">Name(s):</label>
-    <input id="rsvp-name" name="name" class="form-control" type="text" required>
-  </div>
-  <div class="form-group">
-    <label for="rsvp-email">Email:</label>
-    <input id="rsvp-email" name="email" class="form-control" type="email" required>
-  </div>
-  <div class="form-group">
-    <label for="rsvp-dietary">Dietary requirements:</label>
-    <textarea id="rsvp-dietary" name="dietary" class="form-control"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="rsvp-songs">Song requests:</label>
-    <textarea id="rsvp-songs" name="songs" class="form-control"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="rsvp-transport-yes">Book me/us on the bus</label>
-    <div>
-      <input id="rsvp-transport-yes" type="radio" name="transport" value="true" required>
-      <label for="rsvp-transport-yes">Yes</label>
-      <input id="rsvp-transport-no" type="radio" name="transport" value="false" required>
-      <label for="rsvp-transport-no">No</label>
+<header class="text-center">
+  <h1>Lizzy &amp; Alan</h1>
+  <p><strong>Asylum Chapel</strong>, Peckham on Saturday <strong>18th April 2015</strong> at 4pm</p>
+  <p>And afterwards at <strong>Roast Restaurant</strong>, Borough Market</p>
+</header>
+<main>
+  <section id="rsvp">
+    <div class="container">
+      <h1>RSVP</h1>
+      <form id="rsvp-form" class="form-horizontal" method="post" action="/rsvp">
+        <div class="form-group">
+          <label for="rsvp-name" class="col-sm-3 control-label">Name(s):</label>
+          <div class="col-sm-8">
+            <input id="rsvp-name" name="name" class="form-control" type="text" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rsvp-email" class="col-sm-3 control-label">Email:</label>
+          <div class="col-sm-8">
+            <input id="rsvp-email" name="email" class="form-control" type="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rsvp-dietary" class="col-sm-3 control-label">Dietary requirements:</label>
+          <div class="col-sm-8">
+            <textarea id="rsvp-dietary" name="dietary" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rsvp-songs" class="col-sm-3 control-label">Song requests:</label>
+          <div class="col-sm-8">
+            <textarea id="rsvp-songs" name="songs" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rsvp-transport-yes" class="col-sm-3 control-label">Book me/us on the bus</label>
+          <div class="col-sm-8">
+            <div class="form-control-static">
+              <input id="rsvp-transport-yes" type="radio" name="transport" value="true" required>
+              <label for="rsvp-transport-yes">Yes</label>
+              <input id="rsvp-transport-no" type="radio" name="transport" value="false" required>
+              <label for="rsvp-transport-no">No</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"></label>
+          <div class="col-sm-8">
+            <button id="rsvp-submit-yes" type="submit" name="rsvp" value="true" class="btn btn-success">Yes, see you there!</button>
+            <button id="rsvp-submit-no" type="submit" name="rsvp" value="false" class="btn btn-danger">No, sorry I can't make it.</button>
+          </div>
+        </div>
+      </form>
     </div>
-  </div>
-  <div class="form-group">
-    <label>RSVP:</label>
-    <button id="rsvp-submit-yes" type="submit" name="rsvp" value="true" class="btn btn-success">Yes</button>
-    <button id="rsvp-submit-no" type="submit" name="rsvp" value="false" class="btn btn-danger">No</button>
-  </div>
-</form>
+  </section>
+
+  <section id="asylum">
+    <div class="container">
+
+      <div class="col-sm-4">
+        <div class="papers">
+          <div class="vcard">
+            <span class="fn visuallyhidden">Asylum Chapel</span>
+            <span class="adr">
+              <span class="street-address">Asylum Road</span><br>
+              <span class="region">Peckham</span><br>
+              <span class="locality">London</span><br>
+              <span class="postal-code">SE15 2SQ</span><br>
+            </span>
+            <a href="http://www.asylumlondon.org" class="url">www.asylumlondon.org</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-8">
+        <h1 class="text-right">Asylum</h1>
+      </div>
+      
+    </div>
+  </section>
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2484.8505218234227!2d-0.06082099999999999!3d51.479257999999994!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876030f234b75b3%3A0x989b74d688f468a3!2sAsylum!5e0!3m2!1sen!2suk!4v1423335863358" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+
+  <section id="roast">
+    <div class="container">
+
+      <div class="col-sm-8">
+        <h1>Roast</h1>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="papers">
+          <div class="vcard">
+            <span class="fn visuallyhidden">Roast Restaurant</span>
+            <span class="adr">
+              <span class="street-address">
+                The Floral Hall<br>
+                Stoney Street
+              </span><br>
+              <span class="locality">London</span><br>
+              <span class="postal-code">SE1 1TL</span><br>
+            </span>
+            <a href="http://www.roast-restaurant.com" class="url">www.roast-restaurant.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2483.4163043192552!2d-0.09112500000000001!3d51.505578!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604cc899c47c5%3A0x1874db9f5e710991!2sRoast!5e0!3m2!1sen!2suk!4v1423335986398" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+
+  <section>
+    <h1>Arriving</h1>
+    <p>We recommend you take a taxi or public transport to the ceremony as we are providing buses to take everyone from the ceremony to the reception.</p>
+
+    <h2>Taxis</h2>
+
+    <p>You can hail a black cab or pre-book through Addision Lee on <a href="tel:02074079000">020 7407 9000</a></p>
+
+    <h2>Trains</h2>
+
+    <p>The nearest station is Queens Road Peckahm, accessible from Clapham Junction and London Bridge. The chapel is a 10 minute walk from the station</p>
+
+    <h2>Parking</h2>
+
+    <p>If you would like drive to the ceremony you can park on Asylum Road however parking near Borough Market is very difficult.  There are a number of NCP car parks in London which can be pre-booked <a href="http://www.ncp.co.uk/">www.ncp.co.uk</a></p>
+  </section>
+
+  <section>
+    <h1>Staying</h1>
+
+    <p>We will be staying at the Mondrian London Hotel, Blackfriars.</p>
+
+    <p><a href="http://www.morganshotelgroup.com/mondrian/mondrian-london">www.morganshotelgroup.com/mondrian/mondrian-london</a>
+
+    <p>There are plenty of alternative hotels near Borough Market. Please bear in mind the London Marathon is taking place on Sunday 19 April so early booking is recommended.</p>
+  </section>
+
+  <section>
+    <h1>Gifts</h1>
+    <p>We have set up a gift list through John Lewis:</p>
+  </section>
+</main>
 <script src="js/bundle.js"></script>
 </body>
 </html>
