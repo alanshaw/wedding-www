@@ -1,15 +1,54 @@
 var Hapi = require('hapi')
 var Joi = require('joi')
+var Boom = require('boom')
+var levelup = require('levelup')
+var nodemailer = require('nodemailer')
+var config = require('rc')('wedding', require('./default-config'))
 
 var server = new Hapi.Server()
 server.connection({port: process.env.PORT || 6060})
+
+var db = levelup(process.env.DB_PATH || config.dbPath, {valueEncoding: 'json'})
+var mailer = nodemailer.createTransport(config.email)
 
 server.route({
   method: 'POST',
   path: '/rsvp',
   handler: function (req, reply) {
     console.log(req.payload)
-    reply.redirect('/thanks.html')
+
+    // Save the repsonse
+    db.put('rsvp-' + Date.now(), req.payload, function (er) {
+      if (er) return reply(Boom.wrap(er, 500, 'Failed to save your RSVP'))
+      reply.redirect('/thanks.html')
+    })
+
+    // Send notification email
+    mailer.sendMail({
+      from: config.from,
+      to: config.notify,
+      subject: 'Wedding RSVP',
+      text: Object.keys(req.payload).reduce(function (text, key) {
+        var label = key[0].toUpperCase() + key.slice(1)
+        var value = req.payload[key]
+        return text + label + ': ' + value + '\n'
+      }, '')
+    })
+
+    // Send thank you email
+    mailer.sendMail({
+      from: config.from,
+      to: config.notify,
+      subject: 'Thank you for your RSVP',
+      text: 'Dear ' + req.payload.name + ',\n\n' +
+            'Thank you for your RSVP to ' + config.bride + ' and ' + config.groom + "'s wedding. " +
+            'Your response has been received and recorded.\n\n' +
+            req.payload.rsvp ? 
+              'Looking forward to seeing you on the day!\n\nThanks again,\n'
+              :
+              "Sorry to hear you can't make it, thanks for taking the time to reply.\n" +
+            config.bride + ' and ' + config.groom
+    })
   },
   config: {
     validate: {
@@ -17,7 +56,9 @@ server.route({
         name: Joi.string().trim().required(),
         email: Joi.string().email().required(),
         dietary: Joi.string().trim().allow(''),
-        transport: Joi.boolean().required()
+        songs: Joi.string().trim().allow(''),
+        transport: Joi.boolean().required(),
+        rsvp: Joi.boolean().required()
       }
     }
   }
@@ -28,9 +69,7 @@ server.route({
   path: '/{path*}',
   handler: {
     directory: {
-      path: "./client",
-      listing: false,
-      index: true
+      path: "./client"
     }
   }
 })

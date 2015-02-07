@@ -1390,6 +1390,10 @@ function validate (selector, opts) {
 }
 
 validate('#rsvp-form')
+
+$('#rsvp-submit-no').click(function () {
+  $('#rsvp-transport-no').click()
+})
 },{"./jquery.validate.js":"/Users/alan/Code/fun/wedding-www/client/js/jquery.validate.js","jquery":"/Users/alan/Code/fun/wedding-www/node_modules/jquery/dist/jquery.js"}],"/Users/alan/Code/fun/wedding-www/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3

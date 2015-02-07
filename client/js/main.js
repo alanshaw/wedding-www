@@ -23,3 +23,7 @@ function validate (selector, opts) {
 }
 
 validate('#rsvp-form')
+
+$('#rsvp-submit-no').click(function () {
+  $('#rsvp-transport-no').click()
+})

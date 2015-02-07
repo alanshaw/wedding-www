@@ -20,6 +20,10 @@
     <textarea id="rsvp-dietary" name="dietary" class="form-control"></textarea>
   </div>
   <div class="form-group">
+    <label for="rsvp-songs">Song requests:</label>
+    <textarea id="rsvp-songs" name="songs" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
     <label for="rsvp-transport-yes">Book me/us on the bus</label>
     <div>
       <input id="rsvp-transport-yes" type="radio" name="transport" value="true" required>
@@ -30,8 +34,8 @@
   </div>
   <div class="form-group">
     <label>RSVP:</label>
-    <button type="submit" class="btn btn-success">Yes</button>
-    <button type="submit" class="btn btn-danger">No</button>
+    <button id="rsvp-submit-yes" type="submit" name="rsvp" value="true" class="btn btn-success">Yes</button>
+    <button id="rsvp-submit-no" type="submit" name="rsvp" value="false" class="btn btn-danger">No</button>
   </div>
 </form>
 <script src="js/bundle.js"></script>
