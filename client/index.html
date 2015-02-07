@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta chatset="utf8">
+<title></title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<form id="rsvp-form" method="post" action="/rsvp">
+  <div class="form-group">
+    <label for="rsvp-name">Name(s):</label>
+    <input id="rsvp-name" name="name" class="form-control" type="text" required>
+  </div>
+  <div class="form-group">
+    <label for="rsvp-email">Email:</label>
+    <input id="rsvp-email" name="email" class="form-control" type="email" required>
+  </div>
+  <div class="form-group">
+    <label for="rsvp-dietary">Dietary requirements:</label>
+    <textarea id="rsvp-dietary" name="dietary" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="rsvp-transport-yes">Book me/us on the bus</label>
+    <div>
+      <input id="rsvp-transport-yes" type="radio" name="transport" value="true" required>
+      <label for="rsvp-transport-yes">Yes</label>
+      <input id="rsvp-transport-no" type="radio" name="transport" value="false" required>
+      <label for="rsvp-transport-no">No</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>RSVP:</label>
+    <button type="submit" class="btn btn-success">Yes</button>
+    <button type="submit" class="btn btn-danger">No</button>
+  </div>
+</form>
+<script src="js/bundle.js"></script>
+</body>
+</html>

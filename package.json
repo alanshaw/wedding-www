@@ -1,0 +1,24 @@
+{
+  "name": "wedding-www",
+  "version": "0.0.0",
+  "description": "Alan and Lizzy wedding website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browserify": "browserify client/js/main.js -t uglifyify -o client/js/bundle.js",
+    "watchify": "watchify client/js/main.js -v -o client/js/bundle.js",
+    "less": "lessc client/css/main.less -x > client/css/main.css"
+  },
+  "author": "Alan Shaw",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.2",
+    "browserify": "^8.1.3",
+    "hapi": "^8.1.0",
+    "jquery": "^2.1.3",
+    "less": "^2.3.1",
+    "uglifyify": "^3.0.1",
+    "watchify": "^2.3.0"
+  }
+}
