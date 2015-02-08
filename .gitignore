@@ -1,5 +1,5 @@
 node_modules
 .DS_Store
-client/bundle.js
-client/main.css
+client/js/bundle.js
+client/css/main.css
 data
