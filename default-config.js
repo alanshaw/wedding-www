@@ -1,6 +1,4 @@
 module.exports = {
-  // Nodemailer email config
-  email: require('nodemailer-stub-transport')(),
   // From address for notification/confirmation emails
   from: 'wedding@example.org',
   // Addresses of people who want notifications of rsvp's

@@ -3,6 +3,7 @@ var Joi = require('joi')
 var Boom = require('boom')
 var levelup = require('levelup')
 var nodemailer = require('nodemailer')
+var stubTransport = require('nodemailer-stub-transport')
 var config = require('rc')('wedding', require('./default-config'))
 
 console.log(config.bride + ' and ' + config.groom)
@@ -11,7 +12,7 @@ var server = new Hapi.Server()
 server.connection({port: process.env.PORT || 6060})
 
 var db = levelup(process.env.DB_PATH || config.dbPath, {valueEncoding: 'json'})
-var mailer = nodemailer.createTransport(config.email)
+var mailer = nodemailer.createTransport(config.email || stubTransport())
 
 server.route({
   method: 'POST',
