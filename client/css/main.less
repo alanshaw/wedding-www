@@ -21,7 +21,7 @@ header, section {
   min-height: 100vh;
   background: none center 0;
   background-size: cover;
-  padding: 120px 0;
+  padding: 100px 0;
 
   h1 {
     font-family: 'lovers_quarrelregular';
@@ -34,20 +34,28 @@ header, section {
   }
 }
 
+@media (min-width: 768px) {
+  header, section {
+    padding: 120px 0;
+  }
+}
+
 header {
   background-image: url('../img/IMG_1220.jpg');
+  text-align: center;
 
   h1 {
     font-family: 'lovers_quarrelregular';
     color: #fff;
-    font-size: 180px;
+    font-size: 80px;
     margin: 0;
-    padding-top: 200px;
+    padding-top: 0;
     opacity: 1;
   }
   p {
-    font-size: 18px;
+    font-size: 10px;
     color: #fff;
+    margin: 0 0 5px;
   }
 }
 input[type="radio"] {
@@ -59,7 +67,14 @@ input[type="radio"] {
 
 @media (min-width: 768px) {
   header {
-
+    h1 {
+      font-size: 180px;
+      padding-top: 80px;
+    }
+    p {
+      font-size: 18px;
+      margin: 0 0 15px;
+    }
   }
 }
 
@@ -91,10 +106,46 @@ input[type="radio"] {
 
 #asylum {
   background-image: url('../img/p1040185.jpg');
+
+  h1 {
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    opacity: 0.9;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #asylum {
+    h1 {
+      color: #000;
+      text-shadow: none;
+      opacity: 0.5;
+      text-align: right;
+    }
+  }
 }
 
 #roast {
   background-image: url('../img/roast-nov05_002.jpg');
+
+  h1 {
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    opacity: 0.9;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #roast {
+    h1 {
+      color: #000;
+      text-shadow: none;
+      opacity: 0.5;
+      text-align: right;
+    }
+  }
 }
 
 #arriving {
@@ -104,11 +155,32 @@ input[type="radio"] {
     color: #fff;
     text-shadow: 0 0 5px #000;
     opacity: 0.9;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #asylum {
+    h1 {
+      text-align: right;
+    }
   }
 }
 
 #staying {
   background-image: url('../img/1412176293041_wps_38_Mondrian_London_hotel_in_.jpg');
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #staying {
+    h1 {
+      text-align: left;
+    }
+  }
 }
 
 #gifts {
