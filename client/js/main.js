@@ -1,4 +1,6 @@
 var $ = window.jQuery = require('jquery')
+
+require('./jquery.mmenu.js')
 require('./jquery.validate.js')
 
 function validate (selector, opts) {
@@ -26,4 +28,25 @@ validate('#rsvp-form')
 
 $('#rsvp-submit-no').click(function () {
   $('#rsvp-transport-no').click()
+})
+
+var menu = $('#menu')
+
+menu.mmenu({
+  classes: "mm-light",
+  dragOpen: true,
+  offCanvas: {position: "right"},
+  header: {add: true, update: true, title: 'Lizzy &amp; Alan'}
+})
+
+menu.find('li > a').on('click', function (e) {
+  var href = $(this).attr('href')
+
+  if (href.slice(0, 1) != '#') return
+
+  menu.one('closed.mm', function () {
+    setTimeout(function () {
+      $('html, body').animate({scrollTop: $(href).offset().top})
+    }, 10)
+  })
 })

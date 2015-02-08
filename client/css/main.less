@@ -1,4 +1,5 @@
 @import '../../node_modules/bootstrap/less/bootstrap';
+@import 'jquery.mmenu.css';
 
 @font-face {
   font-family: 'lovers_quarrelregular';
@@ -78,11 +79,41 @@ input[type="radio"] {
   }
 }
 
+#menu-toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  border: 0;
+  background: transparent;
+  z-index: 1;
+
+  .icon-bar {
+    display: block;
+    margin: 5px 0;
+    background: #fff;
+    width: 25px;
+    height: 3px;
+    box-shadow: 0 0 1px #333;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #menu-toggle {
+    top: 15px;
+    right: 15px;
+    padding: 30px;
+  }
+}
+
 #rsvp {
   background: #F2EFC7;
   padding: 120px 0;
 
-  label {
+  label, p {
     color: #000;
     opacity: 0.5;
   }
@@ -150,7 +181,7 @@ input[type="radio"] {
   }
 }
 
-#arriving {
+#transport {
   background-image: url('../img/15014053993_207d35eb6b_b.jpg');
 
   h1 {
@@ -162,7 +193,7 @@ input[type="radio"] {
 }
 
 @media (min-width: 768px) {
-  #arriving {
+  #transport {
     h1 {
       text-align: right;
     }
@@ -240,4 +271,16 @@ iframe {
 .papers:after {
   -webkit-transform: rotateZ(-1.5deg);
   transform: rotateZ(-1.5deg);
+}
+
+.mm-menu {
+  max-width: 240px;
+}
+
+html.mm-right.mm-opening .mm-slideout {
+  -webkit-transform: translate(-240px, 0);
+  -moz-transform: translate(-240px, 0);
+  -ms-transform: translate(-240px, 0);
+  -o-transform: translate(-240px, 0);
+  transform: translate(-240px, 0);
 }

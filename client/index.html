@@ -7,180 +7,204 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1>Lizzy &amp; Alan</h1>
-    <p><strong>Asylum Chapel</strong>, Peckham on Saturday <strong>18th April 2015</strong> at 4pm</p>
-    <p>And afterwards at <strong>Roast Restaurant</strong>, Borough Market</p>
-  </div>
-</header>
-<main>
-  <section id="rsvp">
+<div id="page">
+  <header>
     <div class="container">
-      <h1>RSVP</h1>
-      <form id="rsvp-form" class="form-horizontal" method="post" action="/rsvp">
-        <div class="form-group">
-          <label for="rsvp-name" class="col-sm-3 control-label">Name(s) *</label>
-          <div class="col-sm-8">
-            <input id="rsvp-name" name="name" class="form-control" type="text" required placeholder="Your name" maxlength="80">
+      <h1>Lizzy &amp; Alan</h1>
+      <p><strong>Asylum</strong>, Peckham on Saturday <strong>18 April 2015</strong> at 4pm</p>
+      <p>And afterwards at <strong>Roast</strong>, Borough Market</p>
+    </div>
+  </header>
+  <a id="menu-toggle" href="#menu">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
+  <nav id="menu">
+    <!--div class="mm-header">
+      <span class="mm-title">Lizzy &amp; Alan</span>
+    </div-->
+    <ul>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#asylum">Asylum</a></li>
+      <li><a href="#roast">Roast</a></li>
+      <li><a href="#transport">Transport</a></li>
+      <li><a href="#staying">Staying</a></li>
+      <li><a href="#gifts">Gifts</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="rsvp">
+      <div class="container">
+        <h1>RSVP</h1>
+        <form id="rsvp-form" class="form-horizontal" method="post" action="/rsvp">
+          <div class="form-group">
+            <label for="rsvp-name" class="col-sm-3 control-label">Guest name(s) <span class="text-danger">*</span></label>
+            <div class="col-sm-8">
+              <input id="rsvp-name" name="name" class="form-control" type="text" required placeholder="Your name(s)" maxlength="80">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="rsvp-email" class="col-sm-3 control-label">Email *</label>
-          <div class="col-sm-8">
-            <input id="rsvp-email" name="email" class="form-control" type="email" required placeholder="Your email address">
+          <div class="form-group">
+            <label for="rsvp-email" class="col-sm-3 control-label">Email <span class="text-danger">*</span></label>
+            <div class="col-sm-8">
+              <input id="rsvp-email" name="email" class="form-control" type="email" required placeholder="Your email address">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="rsvp-dietary" class="col-sm-3 control-label">Dietary requirements:</label>
-          <div class="col-sm-8">
-            <textarea id="rsvp-dietary" name="dietary" class="form-control" placeholder="Any dietary requirements and food allergies you have."></textarea>
+          <div class="form-group">
+            <label for="rsvp-dietary" class="col-sm-3 control-label">Dietary requirements:</label>
+            <div class="col-sm-8">
+              <textarea id="rsvp-dietary" name="dietary" class="form-control" placeholder="Any dietary requirements or food allergies?"></textarea>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="rsvp-comments" class="col-sm-3 control-label">Comments:</label>
-          <div class="col-sm-8">
-            <textarea id="rsvp-comments" name="comments" class="form-control" placeholder="Comments, questions, song requests etc."></textarea>
+          <div class="form-group">
+            <label for="rsvp-comments" class="col-sm-3 control-label">Comments:</label>
+            <div class="col-sm-8">
+              <textarea id="rsvp-comments" name="comments" class="form-control" placeholder="Questions, song requests, etc."></textarea>
+            </div>
           </div>
+          <div class="form-group">
+            <label for="rsvp-transport-yes" class="col-sm-3 control-label">Bus ticket <span class="text-danger">*</span></label>
+            <div class="col-sm-8">
+              <div class="form-control-static">
+                <p>We're providing buses to drive us from Asylum to Roast. Do you need a ride?</p>
+                <div>
+                  <input id="rsvp-transport-yes" type="radio" name="transport" value="true" required>
+                  <label for="rsvp-transport-yes">Yes</label>
+                  <input id="rsvp-transport-no" type="radio" name="transport" value="false" required>
+                  <label for="rsvp-transport-no">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-8">
+              <button id="rsvp-submit-yes" type="submit" name="rsvp" value="true" class="btn btn-success">Accept</button>
+              <button id="rsvp-submit-no" type="submit" name="rsvp" value="false" class="btn btn-danger">Decline</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="asylum">
+      <div class="container">
+
+        <div class="col-sm-8 col-sm-push-4">
+          <h1>Asylum</h1>
         </div>
-        <div class="form-group">
-          <label for="rsvp-transport-yes" class="col-sm-3 control-label">Book me/us on the bus *</label>
-          <div class="col-sm-8">
-            <div class="form-control-static">
-              <input id="rsvp-transport-yes" type="radio" name="transport" value="true" required>
-              <label for="rsvp-transport-yes">Yes</label>
-              <input id="rsvp-transport-no" type="radio" name="transport" value="false" required>
-              <label for="rsvp-transport-no">No</label>
+
+        <div class="col-sm-4 col-sm-pull-8">
+          <div class="papers">
+            <div class="vcard">
+              <span class="fn">Caroline Garden's Chapel</span><br>
+              <span class="adr">
+                <span class="street-address">Asylum Road</span><br>
+                <span class="region">Peckham</span><br>
+                <span class="locality">London</span>
+                <span class="postal-code">SE15 2SQ</span><br>
+              </span>
+              <a href="http://www.asylumlondon.org" class="url">www.asylumlondon.org</a>
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label"></label>
-          <div class="col-sm-8">
-            <button id="rsvp-submit-yes" type="submit" name="rsvp" value="true" class="btn btn-success">Accept</button>
-            <button id="rsvp-submit-no" type="submit" name="rsvp" value="false" class="btn btn-danger">Decline</button>
+
+      </div>
+    </section>
+
+    <div>
+      <a class="map-link" href="http://maps.google.com/maps?ll=51.479258,-0.060821&amp;z=15&amp;t=m&amp;hl=en&amp;gl=GB&amp;mapclient=embed&amp;cid=10996511379924740259"></a>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2484.8505218234227!2d-0.06082099999999999!3d51.479257999999994!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876030f234b75b3%3A0x989b74d688f468a3!2sAsylum!5e0!3m2!1sen!2suk!4v1423335863358" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+    </div>
+
+    <section id="roast">
+      <div class="container">
+
+        <div class="col-sm-8">
+          <h1>Roast</h1>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="papers">
+            <div class="vcard">
+              <span class="fn hidden">Roast Restaurant</span>
+              <span class="adr">
+                <span class="street-address">
+                  The Floral Hall<br>
+                  Stoney Street
+                </span><br>
+                <span class="locality">London</span>
+                <span class="postal-code">SE1 1TL</span><br>
+              </span>
+              <a href="http://www.roast-restaurant.com" class="url">www.roast-restaurant.com</a>
+            </div>
           </div>
         </div>
-      </form>
-    </div>
-  </section>
 
-  <section id="asylum">
-    <div class="container">
-
-      <div class="col-sm-8 col-sm-push-4">
-        <h1>Asylum</h1>
       </div>
+    </section>
 
-      <div class="col-sm-4 col-sm-pull-8">
-        <div class="papers">
-          <div class="vcard">
-            <span class="fn hidden">Asylum Chapel</span>
-            <span class="adr">
-              <span class="street-address">Asylum Road</span><br>
-              <span class="region">Peckham</span><br>
-              <span class="locality">London</span><br>
-              <span class="postal-code">SE15 2SQ</span><br>
-            </span>
-            <a href="http://www.asylumlondon.org" class="url">www.asylumlondon.org</a>
+    <div>
+      <a class="map-link" href="http://maps.google.com/maps?ll=51.505578,-0.091125&amp;z=15&amp;t=m&amp;hl=en&amp;gl=GB&amp;mapclient=embed&amp;cid=1762274831739455889"></a>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2483.4163043192552!2d-0.09112500000000001!3d51.505578!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604cc899c47c5%3A0x1874db9f5e710991!2sRoast!5e0!3m2!1sen!2suk!4v1423335986398" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+    </div>
+
+    <section id="transport">
+      <div class="container">
+        <div class="col-sm-6 col-sm-push-5">
+          <h1>Transport</h1>
+          <div class="papers">
+            <p>We recommend you take a taxi or public transport to the ceremony as we are providing buses to take everyone from Asylum to Roast.</p>
+
+            <h2>Taxis</h2>
+
+            <p>You can hail a black cab or pre-book through Addision Lee on <a href="tel:02074079000">020 7407 9000</a></p>
+
+            <h2>Trains</h2>
+
+            <p>The nearest station is Queens Road Peckham, accessible from Clapham Junction and London Bridge. The chapel is a 10 minute walk from the station</p>
+
+            <h2>Parking</h2>
+
+            <p>If you would like to drive to the ceremony you can park on Asylum Road. Parking near Borough Market is very difficult however there is an <a href="http://www.ncp.co.uk/find-a-car-park/car-parks/london-london-bridge/">NCP car park</a> near London Bridge which can be pre-booked.</p>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="staying">
+      <div class="container">
 
-  <div>
-    <a class="map-link" href="http://maps.google.com/maps?ll=51.479258,-0.060821&amp;z=15&amp;t=m&amp;hl=en&amp;gl=GB&amp;mapclient=embed&amp;cid=10996511379924740259"></a>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2484.8505218234227!2d-0.06082099999999999!3d51.479257999999994!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876030f234b75b3%3A0x989b74d688f468a3!2sAsylum!5e0!3m2!1sen!2suk!4v1423335863358" width="100%" height="250" frameborder="0" style="border:0"></iframe>
-  </div>
+        <div class="col-sm-8">
+          <h1>Staying</h1>
+        </div>
 
-  <section id="roast">
-    <div class="container">
+        <div class="col-sm-4">
+          <div class="papers">
+            <p>We will be staying at the Mondrian London Hotel, Blackfriars.</p>
 
-      <div class="col-sm-8">
-        <h1>Roast</h1>
-      </div>
+            <p><a href="http://www.morganshotelgroup.com/mondrian/mondrian-london">www.morganshotelgroup.com</a></p>
 
-      <div class="col-sm-4">
-        <div class="papers">
-          <div class="vcard">
-            <span class="fn hidden">Roast Restaurant</span>
-            <span class="adr">
-              <span class="street-address">
-                The Floral Hall<br>
-                Stoney Street
-              </span><br>
-              <span class="locality">London</span><br>
-              <span class="postal-code">SE1 1TL</span><br>
-            </span>
-            <a href="http://www.roast-restaurant.com" class="url">www.roast-restaurant.com</a>
+            <p>There are plenty of alternative hotels near Borough Market. Please bear in mind the London Marathon is taking place on Sunday 19 April so early booking is recommended.</p>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <div>
-    <a class="map-link" href="http://maps.google.com/maps?ll=51.505578,-0.091125&amp;z=15&amp;t=m&amp;hl=en&amp;gl=GB&amp;mapclient=embed&amp;cid=1762274831739455889"></a>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2483.4163043192552!2d-0.09112500000000001!3d51.505578!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604cc899c47c5%3A0x1874db9f5e710991!2sRoast!5e0!3m2!1sen!2suk!4v1423335986398" width="100%" height="250" frameborder="0" style="border:0"></iframe>
-  </div>
-
-  <section id="arriving">
-    <div class="container">
-      <div class="col-sm-6 col-sm-push-5">
-        <h1>Arriving</h1>
-        <div class="papers">
-          <p>We recommend you take a taxi or public transport to the ceremony as we are providing buses to take everyone from the ceremony to the reception.</p>
-
-          <h2>Taxis</h2>
-
-          <p>You can hail a black cab or pre-book through Addision Lee on <a href="tel:02074079000">020 7407 9000</a></p>
-
-          <h2>Trains</h2>
-
-          <p>The nearest station is Queens Road Peckahm, accessible from Clapham Junction and London Bridge. The chapel is a 10 minute walk from the station</p>
-
-          <h2>Parking</h2>
-
-          <p>If you would like drive to the ceremony you can park on Asylum Road however parking near Borough Market is very difficult.  There are a number of NCP car parks in London which can be pre-booked <a href="http://www.ncp.co.uk/">www.ncp.co.uk</a></p>
+    <section id="gifts">
+      <div class="container">
+        <div class="col-sm-4">
+          <h1>Gifts</h1>
+          <div class="papers">
+            <p>We have set up a gift list through John Lewis:</p>
+            <p><a href="http://www.johnlewis.com/">www.johnlewis.com</a></p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="staying">
-    <div class="container">
-
-      <div class="col-sm-8">
-        <h1>Staying</h1>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="papers">
-          <p>We will be staying at the Mondrian London Hotel, Blackfriars.</p>
-
-          <p><a href="http://www.morganshotelgroup.com/mondrian/mondrian-london">www.morganshotelgroup.com</a></p>
-
-          <p>There are plenty of alternative hotels near Borough Market. Please bear in mind the London Marathon is taking place on Sunday 19th April so early booking is recommended.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="gifts">
-    <div class="container">
-      <div class="col-sm-4">
-        <h1>Gifts</h1>
-        <div class="papers">
-          <p>We have set up a gift list through John Lewis:</p>
-          <p><a href="http://www.johnlewis.com/">www.johnlewis.com</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
+</div>
 <script src="js/bundle.js"></script>
 </body>
 </html>
