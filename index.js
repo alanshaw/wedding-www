@@ -5,6 +5,8 @@ var levelup = require('levelup')
 var nodemailer = require('nodemailer')
 var config = require('rc')('wedding', require('./default-config'))
 
+console.log(config.bride + ' and ' + config.groom)
+
 var server = new Hapi.Server()
 server.connection({port: process.env.PORT || 6060})
 
@@ -33,6 +35,8 @@ server.route({
         var value = req.payload[key]
         return text + label + ': ' + value + '\n'
       }, '')
+    }, function (er) {
+      if (er) console.error('Failed to send notification email', er)
     })
 
     // Send thank you email
@@ -48,6 +52,8 @@ server.route({
               :
               "Sorry to hear you can't make it, thanks for taking the time to reply.\n" +
             config.bride + ' and ' + config.groom
+    }, function (er) {
+      if (er) console.error('Failed to send thank you email', er)
     })
   },
   config: {
