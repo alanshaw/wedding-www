@@ -4,7 +4,6 @@
 <meta chatset="utf8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lizzy &amp; Alan's Wedding</title>
-<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -21,31 +20,31 @@
       <h1>RSVP</h1>
       <form id="rsvp-form" class="form-horizontal" method="post" action="/rsvp">
         <div class="form-group">
-          <label for="rsvp-name" class="col-sm-3 control-label">Name(s):</label>
+          <label for="rsvp-name" class="col-sm-3 control-label">Name(s) *</label>
           <div class="col-sm-8">
-            <input id="rsvp-name" name="name" class="form-control" type="text" required>
+            <input id="rsvp-name" name="name" class="form-control" type="text" required placeholder="Your name">
           </div>
         </div>
         <div class="form-group">
-          <label for="rsvp-email" class="col-sm-3 control-label">Email:</label>
+          <label for="rsvp-email" class="col-sm-3 control-label">Email *</label>
           <div class="col-sm-8">
-            <input id="rsvp-email" name="email" class="form-control" type="email" required>
+            <input id="rsvp-email" name="email" class="form-control" type="email" required placeholder="Your email address">
           </div>
         </div>
         <div class="form-group">
           <label for="rsvp-dietary" class="col-sm-3 control-label">Dietary requirements:</label>
           <div class="col-sm-8">
-            <textarea id="rsvp-dietary" name="dietary" class="form-control"></textarea>
+            <textarea id="rsvp-dietary" name="dietary" class="form-control" placeholder="Any dietary requirements and food allergies you have."></textarea>
           </div>
         </div>
         <div class="form-group">
-          <label for="rsvp-songs" class="col-sm-3 control-label">Song requests:</label>
+          <label for="rsvp-comments" class="col-sm-3 control-label">Comments:</label>
           <div class="col-sm-8">
-            <textarea id="rsvp-songs" name="songs" class="form-control"></textarea>
+            <textarea id="rsvp-comments" name="comments" class="form-control" placeholder="Comments, questions, song requests etc."></textarea>
           </div>
         </div>
         <div class="form-group">
-          <label for="rsvp-transport-yes" class="col-sm-3 control-label">Book me/us on the bus</label>
+          <label for="rsvp-transport-yes" class="col-sm-3 control-label">Book me/us on the bus *</label>
           <div class="col-sm-8">
             <div class="form-control-static">
               <input id="rsvp-transport-yes" type="radio" name="transport" value="true" required>

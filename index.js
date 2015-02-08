@@ -62,7 +62,7 @@ server.route({
         name: Joi.string().trim().required(),
         email: Joi.string().email().required(),
         dietary: Joi.string().trim().allow(''),
-        songs: Joi.string().trim().allow(''),
+        comments: Joi.string().trim().allow(''),
         transport: Joi.boolean().required(),
         rsvp: Joi.boolean().required()
       }
