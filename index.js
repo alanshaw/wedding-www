@@ -43,7 +43,7 @@ server.route({
     // Send thank you email
     mailer.sendMail({
       from: config.from,
-      to: config.notify,
+      to: req.payload.email,
       subject: 'Thank you for your RSVP',
       text: 'Dear ' + req.payload.name + ',\n\n' +
             'Thank you for your RSVP to ' + config.bride + ' and ' + config.groom + "'s wedding. " +
@@ -60,7 +60,7 @@ server.route({
   config: {
     validate: {
       payload: {
-        name: Joi.string().trim().required(),
+        name: Joi.string().max(80).trim().required(),
         email: Joi.string().email().required(),
         dietary: Joi.string().trim().allow(''),
         comments: Joi.string().trim().allow(''),
