@@ -48,10 +48,10 @@ server.route({
       text: 'Dear ' + req.payload.name + ',\n\n' +
             'Thank you for your RSVP to ' + config.bride + ' and ' + config.groom + "'s wedding. " +
             'Your response has been received and recorded.\n\n' +
-            req.payload.rsvp ? 
+            (req.payload.rsvp ? 
               'Looking forward to seeing you on the day!\n\nThanks again,\n'
               :
-              "Sorry to hear you can't make it, thanks for taking the time to reply.\n" +
+              "Sorry to hear you can't make it, thanks for taking the time to reply.\n") +
             config.bride + ' and ' + config.groom
     }, function (er) {
       if (er) console.error('Failed to send thank you email', er)
