@@ -1,39 +1,41 @@
 @import '../../node_modules/bootstrap/less/bootstrap';
 
-
-
 @font-face {
-    font-family: 'im_fell_flowers_1regular';
-    src: url('../font/feflow1-webfont.eot');
-    src: url('../font/feflow1-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/feflow1-webfont.woff2') format('woff2'),
-         url('../font/feflow1-webfont.woff') format('woff'),
-         url('../font/feflow1-webfont.ttf') format('truetype'),
-         url('../font/feflow1-webfont.svg#im_fell_flowers_1regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'lovers_quarrelregular';
-    src: url('../font/loversquarrel-regular-webfont.eot');
-    src: url('../font/loversquarrel-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/loversquarrel-regular-webfont.woff2') format('woff2'),
-         url('../font/loversquarrel-regular-webfont.woff') format('woff'),
-         url('../font/loversquarrel-regular-webfont.ttf') format('truetype'),
-         url('../font/loversquarrel-regular-webfont.svg#lovers_quarrelregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'lovers_quarrelregular';
+  src: url('../font/loversquarrel-regular-webfont.eot');
+  src: url('../font/loversquarrel-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../font/loversquarrel-regular-webfont.woff2') format('woff2'),
+       url('../font/loversquarrel-regular-webfont.woff') format('woff'),
+       url('../font/loversquarrel-regular-webfont.ttf') format('truetype'),
+       url('../font/loversquarrel-regular-webfont.svg#lovers_quarrelregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   margin: 0;
 }
-header {
+
+header, section {
   min-height: 600px;
   min-height: 100vh;
-  background: url('../img/IMG_1220.jpg') center 0;
+  background: none center 0;
   background-size: cover;
+  padding: 120px 0;
+
+  h1 {
+    font-family: 'lovers_quarrelregular';
+    font-size: 120px;
+    color: #000;
+    opacity: 0.5;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+
+header {
+  background-image: url('../img/IMG_1220.jpg');
 
   h1 {
     font-family: 'lovers_quarrelregular';
@@ -41,6 +43,7 @@ header {
     font-size: 180px;
     margin: 0;
     padding-top: 200px;
+    opacity: 1;
   }
   p {
     font-size: 18px;
@@ -53,16 +56,17 @@ input[type="radio"] {
     margin-left: 0;
   }
 }
+
+@media (min-width: 768px) {
+  header {
+
+  }
+}
+
 #rsvp {
   background: #F2EFC7;
   padding: 120px 0;
 
-  h1 {
-    font-family: 'lovers_quarrelregular';
-    font-size: 120px;
-    color: #000;
-    opacity: 0.5;
-  }
   label {
     color: #000;
     opacity: 0.5;
@@ -84,84 +88,31 @@ input[type="radio"] {
     }
   }
 }
-#asylum {
-  min-height: 100vh;
-  background: url('../img/p1040185.jpg') center 0;
-  background-size: cover;
-  padding: 120px 0;
 
-  h1 {
-    font-family: 'lovers_quarrelregular';
-    font-size: 120px;
-    color: #000;
-    opacity: 0.5;
-  }
+#asylum {
+  background-image: url('../img/p1040185.jpg');
 }
 
 #roast {
-  min-height: 100vh;
-  background: url('../img/roast-nov05_002.jpg') center 0;
-  background-size: cover;
-  padding: 120px 0;
-
-  h1 {
-    font-family: 'lovers_quarrelregular';
-    font-size: 120px;
-    color: #000;
-    opacity: 0.5;
-  }
+  background-image: url('../img/roast-nov05_002.jpg');
 }
 
 #arriving {
-  min-height: 100vh;
-  background: url('../img/15014053993_207d35eb6b_b.jpg') center 0;
-  background-size: cover;
-  padding: 120px 0;
+  background-image: url('../img/15014053993_207d35eb6b_b.jpg');
 
   h1 {
-    font-family: 'lovers_quarrelregular';
-    font-size: 120px;
     color: #fff;
     text-shadow: 0 0 5px #000;
     opacity: 0.9;
   }
-  h2 {
-    font-size: 18px;
-  }
 }
 
 #staying {
-  min-height: 100vh;
-  background: url('../img/1412176293041_wps_38_Mondrian_London_hotel_in_.jpg') center 0;
-  background-size: cover;
-  padding: 120px 0;
-
-  h1 {
-    font-family: 'lovers_quarrelregular';
-    font-size: 120px;
-    color: #000;
-    opacity: 0.5;
-  }
-  h2 {
-    font-size: 18px;
-  }
+  background-image: url('../img/1412176293041_wps_38_Mondrian_London_hotel_in_.jpg');
 }
 
 #gifts {
-  min-height: 100vh;
-  background: url('../img/header-wedding-gift-list.jpg') center 0;
-  background-size: cover;
-  padding: 120px 0;
-
-  h1 {
-    font-family: 'lovers_quarrelregular';
-    font-size: 120px;
-    color: #000;
-    opacity: 0.5;
-  }
-  h2 {
-    font-size: 18px;
-  }
+  background-image: url('../img/header-wedding-gift-list.jpg');
 }
 
 .map-link {
@@ -170,28 +121,26 @@ input[type="radio"] {
   height: 250px;
   z-index: 1;
 }
+
 iframe {
   margin-bottom: -4px;
 }
 
-.papers, .papers:before, .papers:after
-{
+.papers, .papers:before, .papers:after {
   background-color: #fff;
   background-color: rgba(255, 255, 255, 0.6);
   border: 1px solid #ccc;
   box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.papers
-{
+.papers {
   position: relative;
   width: 100%;
   padding: 2em;
   z-index: 1;
 }
 
-.papers:before, .papers:after
-{
+.papers:before, .papers:after {
   content: "";
   position: absolute;
   left: 0;
@@ -203,8 +152,7 @@ iframe {
   z-index: -1;
 }
 
-.papers:after
-{
+.papers:after {
   -webkit-transform: rotateZ(-1.5deg);
   transform: rotateZ(-1.5deg);
 }
