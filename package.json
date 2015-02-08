@@ -1,6 +1,6 @@
 {
   "name": "wedding-www",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Alan and Lizzy wedding website",
   "main": "index.js",
   "scripts": {
