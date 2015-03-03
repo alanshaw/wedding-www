@@ -50,3 +50,13 @@ menu.find('li > a').on('click', function (e) {
     }, 10)
   })
 })
+
+// Load the iframes after the rest of the document has loaded
+$(document).ready(function () {
+  console.log($('iframe').size())
+  $('iframe').each(function () {
+    var iframe = $(this)
+    console.log(iframe.data('src'))
+    iframe.attr('src', iframe.data('src'))
+  })
+})
