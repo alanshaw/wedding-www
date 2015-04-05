@@ -73,6 +73,14 @@ server.route({
 
 server.route({
   method: 'GET',
+  path: '/crib',
+  handler: function (req, reply) {
+    reply.redirect('https://alanshaw.github.io/wedding-crib')
+  }
+})
+
+server.route({
+  method: 'GET',
   path: '/{path*}',
   handler: {
     directory: {
