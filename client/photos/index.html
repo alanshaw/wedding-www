@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta chatset="utf8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Photos!</title>
+<link rel="stylesheet" href="photoswipe.css">
+<link rel="stylesheet" href="default-skin/default-skin.css">
+<style>
+@font-face {
+  font-family: 'lovers_quarrelregular';
+  src: url('../font/loversquarrel-regular-webfont.eot');
+  src: url('../font/loversquarrel-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../font/loversquarrel-regular-webfont.woff2') format('woff2'),
+       url('../font/loversquarrel-regular-webfont.woff') format('woff'),
+       url('../font/loversquarrel-regular-webfont.ttf') format('truetype'),
+       url('../font/loversquarrel-regular-webfont.svg#lovers_quarrelregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  background: #000 url(http://www.ucarecdn.com/4722f2b7-a8d2-4294-b396-4789d83a6eb9/-/resize/2048x/-/quality/lightest/3C4A3775.jpg) no-repeat scroll center center;
+  background-size: cover;
+}
+h1 {
+  font-family: 'lovers_quarrelregular';
+  font-size: 100px;
+  color: #f7f7f7;
+  text-align: center;
+  width: 100%;
+  height: 276px;
+  margin-top: -138px;
+  position: fixed;
+  top: 50%;
+  text-shadow: 2px 2px #000;
+}
+</style>
+</head>
+<body>
+  <h1>Lizzy &amp; Alan<br/>Wedding Photos</h1>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+      <!-- Background of PhotoSwipe.
+           It's a separate element as animating opacity is faster than rgba(). -->
+      <div class="pswp__bg"></div>
+
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
+
+          <!-- Container that holds slides.
+              PhotoSwipe keeps only 3 of them in the DOM to save memory.
+              Don't modify these 3 pswp__item elements, data is added later on. -->
+          <div class="pswp__container">
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+          </div>
+
+          <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+          <div class="pswp__ui pswp__ui--hidden">
+
+              <div class="pswp__top-bar">
+
+                  <!--  Controls are self-explanatory. Order can be changed. -->
+
+                  <div class="pswp__counter"></div>
+
+                  <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                  <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                  <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                  <!-- element will get class pswp__preloader--active when preloader is running -->
+                  <div class="pswp__preloader">
+                      <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                          <div class="pswp__preloader__donut"></div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                  <div class="pswp__share-tooltip"></div>
+              </div>
+
+              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+              </button>
+
+              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+              </button>
+
+              <div class="pswp__caption">
+                  <div class="pswp__caption__center"></div>
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+  <script src="photoswipe.min.js"></script>
+  <script src="photoswipe-ui-default.min.js"></script>
+
+  <script>
+    var pswpElement = document.querySelectorAll('.pswp')[0]
+
+    // build items array
+    var items = [{
+      src: 'http://placekitten.com/1200/900',
+      w: 1200,
+      h: 900
+    }, {
+      src: 'http://placekitten.com/1200/900',
+      w: 1200,
+      h: 900
+    }]
+
+    // define options (if needed)
+    var options = {
+      // optionName: 'option value'
+      // for example:
+      index: 0 // start at first slide
+    }
+
+    // Initializes and opens PhotoSwipe
+    var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options)
+    gallery.init()
+
+  </script>
+</body>
+</html>
