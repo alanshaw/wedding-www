@@ -117,7 +117,6 @@ h1 {
   <script>
     var pswpElement = document.querySelectorAll('.pswp')[0]
 
-    // build items array
     var items = [{
       src: 'http://placekitten.com/1200/900',
       w: 1200,
@@ -128,11 +127,13 @@ h1 {
       h: 900
     }]
 
-    // define options (if needed)
+    items = items.map(function (i) {
+      i.title = i.title || 'Photo by Jojo Harper - www.jojoharperevents.com'
+      return i
+    })
+
     var options = {
-      // optionName: 'option value'
-      // for example:
-      index: 0 // start at first slide
+      index: 0
     }
 
     // Initializes and opens PhotoSwipe
